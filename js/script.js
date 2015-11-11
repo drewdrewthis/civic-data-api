@@ -1,7 +1,10 @@
 $(function() {
 
-	function printData(data) {
+	// Outputs returned data
+    function printData(data) {
 		console.log(data);
+
+        // Gets and outputs info for each official by office 
 		$.each(data.offices, function(key, office){
 			var index = office.officialIndices[0],
 				official = data.officials[index];
@@ -9,6 +12,7 @@ $(function() {
 		});
 	};
 
+    // Main submit
     $('#address_lookup').submit(function(e){
     	e.preventDefault();
     	$('.address-output').html("");
@@ -18,6 +22,7 @@ $(function() {
 				key: "AIzaSyB73MDWfXrB7DjxUlfN3vPUGmHbF_l5wUQ"
 			};
 
+        // Makes an AJAX request with user supplied address and returns civic data
     	$.ajax({
     		method: "GET",
     		url: "https://www.googleapis.com/civicinfo/v2/representatives",
