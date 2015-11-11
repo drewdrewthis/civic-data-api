@@ -11,16 +11,24 @@
 	<header class="container-fluid">
 		<div class="row">
 			<form action="" id="address_lookup" class="form-inline">
-				<input type="text" name="user-input" class="form-control" autofocus>
+				<input id="autocomplete" type="text" name="user-input" class="form-control" autofocus>
 				<input type="submit" name="Submit" class="btn">
 			</form>
 		</div>
 	</header>
-	<div class="container reps national"></div>
-	<hr>
-	<div class="container reps state"></div>
-	<hr>
-	<div class="container reps city"></div>
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-md-8" id="reps">
+				<div class="container reps national"></div>
+				<hr>
+				<div class="container reps state"></div>
+				<hr>
+				<div class="container reps city"></div>
+			</div>
+			<div class="col-md-4 " id="voter-info"></div>
+		</div>
+	</section>
+	
 	
 
 	<!--Templates-->
@@ -39,6 +47,7 @@
 	<script type="text/javascript" src=
 	"https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB73MDWfXrB7DjxUlfN3vPUGmHbF_l5wUQ&libraries=places"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
