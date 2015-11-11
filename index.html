@@ -8,16 +8,28 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<form action="" id="address_lookup">
-		<input type="text" name="user-input" autofocus>
-		<input type="submit" name="Submit">
-	</form>
-	<div class="reps"><ul></ul></div>
+	<header class="container-fluid">
+		<div class="row">
+			<form action="" id="address_lookup" class="form-inline">
+				<input type="text" name="user-input" class="form-control" autofocus>
+				<input type="submit" name="Submit" class="btn">
+			</form>
+		</div>
+	</header>
+	<div class="container reps">
+	</div>
+	
 
 	<!--Templates-->
-	<script id="template-1" type="text/x-handlebars-template">
-		<li>{{office.name}}{{official.name}}</li>
-	</script>
+	<div id="template-1" class="hidden" type="text/x-handlebars-template">
+		<div class="row">
+			<div class="col-sm-4">
+				<h2>{{office.name}}</h2>
+				<h3>{{official.name}}</h3>
+				<img src="{{official.photoUrl}}" class="img-responsive img-rounded">
+			</div>
+		</div>
+	</div>
 
 	<!--Scripts-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

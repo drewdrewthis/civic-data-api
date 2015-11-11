@@ -41,7 +41,7 @@ $(function() {
     	.done(function(data) {
     		console.log('AJAX Request Succeeded');
     		printData(data);
-    		$('input[name="Submit"]').val("");
+    		$('input[name="user-input"]').val("");
     	})
     	.fail(function() {
     		console.log('AJAX Request Failed');
