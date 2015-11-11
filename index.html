@@ -12,8 +12,14 @@
 		<input type="text" name="user-input" autofocus>
 		<input type="submit" name="Submit">
 	</form>
-	<div class="address-output"></div>
+	<div class="reps"><ul></ul></div>
 
+	<!--Templates-->
+	<script id="template-1" type="text/x-handlebars-template">
+		<li>{{office.name}}{{official.name}}</li>
+	</script>
+
+	<!--Scripts-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src=
 	"https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>

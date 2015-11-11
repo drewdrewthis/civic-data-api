@@ -7,8 +7,17 @@ $(function() {
         // Gets and outputs info for each official by office 
 		$.each(data.offices, function(key, office){
 			var index = office.officialIndices[0],
-				official = data.officials[index];
-			$('.address-output').append(office.name+":"+official.name+"<br>");
+				official = data.officials[index],
+                context = {
+                    'office': office,
+                    'official':official
+                },
+                // Handlebars compiler
+                source = $("#template-1").html(),
+                template = Handlebars.compile(source),
+                html = template(context);
+            
+            $('.reps').append(html);
 		});
 	};
 
