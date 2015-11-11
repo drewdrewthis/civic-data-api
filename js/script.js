@@ -17,14 +17,26 @@ $(function() {
                 template = Handlebars.compile(source),
                 html = template(context);
             
-            $('.reps').append(html);
+            if(office.levels) {
+                switch(office.levels[0]) {
+                    case "country":
+                        $('.national').append(html);
+                        break;
+                    default:
+                        $('.state').append(html);
+                        break;
+                };
+            }
+            else {
+                $('.city').append(html);
+            }
 		});
 	};
 
     // Main submit
     $('#address_lookup').submit(function(e){
     	e.preventDefault();
-    	$('.address-output').html("");
+    	$('.reps').html("");
     	var input = $('input').val(),
     		params = {
 				address: input,

@@ -7,6 +7,10 @@ header form {
   max-width: 500px;
   margin: auto;
 }
+img {
+  max-height: 100px;
+  max-width: 100px;
+}
 .hidden {
   display: none;
 }

@@ -16,17 +16,20 @@
 			</form>
 		</div>
 	</header>
-	<div class="container reps">
-	</div>
+	<div class="container reps national"></div>
+	<hr>
+	<div class="container reps state"></div>
+	<hr>
+	<div class="container reps city"></div>
 	
 
 	<!--Templates-->
 	<div id="template-1" class="hidden" type="text/x-handlebars-template">
 		<div class="row">
+			<h2>{{office.name}}</h2>
+			<h3>{{official.name}}</h3>
 			<div class="col-sm-4">
-				<h2>{{office.name}}</h2>
-				<h3>{{official.name}}</h3>
-				<img src="{{official.photoUrl}}" class="img-responsive img-rounded">
+				<img src="{{official.photoUrl}}" class="img-responsive img-circle">
 			</div>
 		</div>
 	</div>
