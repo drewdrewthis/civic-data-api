@@ -10,7 +10,29 @@ var twitFunc = function() {
     }(document,"script","twitter-wjs");
 };
 
+
 $(function() {
+
+    function getTwitId(username) {
+        var params = {
+                screen_name: "twitterapi,twitter,"+username,
+                user_id: "668139914417061889"
+            };
+
+        $.ajax({
+            method: "GET",
+            url: 'https://api.twitter.com/1.1/users/lookup.json',
+            dataType: "json",
+            data: params
+        })
+        .done(function(results) {
+            console.log('Twitter Id Returned');
+            console.log(results);
+        })
+        .fail(function() {
+            console.log('Twit Request Failed');
+        });
+    }
 
 	// Outputs returned data
     function printReps(data) {
@@ -47,6 +69,7 @@ $(function() {
 		});
 
         twitFunc();
+        getTwitId("drew_drew_this");
 	};
 
     
