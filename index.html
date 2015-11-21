@@ -17,15 +17,15 @@
 		</div>
 	</header>
 	<section class="container-fluid">
+		<div class="row" id="voter-info"></div>
 		<div class="row">
-			<div class="col-md-8" id="reps">
+			<div id="reps">
 				<div class="container reps national"></div>
 				<hr>
 				<div class="container reps state"></div>
 				<hr>
 				<div class="container reps city"></div>
 			</div>
-			<div class="col-md-4 " id="voter-info"></div>
 		</div>
 	</section>
 	
@@ -34,18 +34,22 @@
 	<!--Templates-->
 	<div id="template-1" class="hidden" type="text/x-handlebars-template">
 		<div class="row">
-			<h2>{{office.name}}</h2>
-			<h3>{{official.name}}</h3>
-			<div class="col-sm-4">
-				<img src="{{official.photoUrl}}" class="img-responsive img-circle">
+			<div class="col-md-8">
+				<h2>{{office.name}}</h2>
+				<h3>{{official.name}}</h3>
+				<div class="col-sm-4">
+					<img src="{{official.photoUrl}}" class="img-responsive">
+				</div>
+			</div>
+			<div class="col-md-4">
+				<a class="twitter-timeline {{twitter}}" 
+				href="https://twitter.com/{{twitter}}" 
+				data-screen-name="{{twitter}}"
+				height = "400"
+				data-width = "100%"
+				data-widget-id="668139914417061889">Tweets by @{{twitter}}</a>
 			</div>
 		</div>
-		<a class="twitter-timeline {{twitter}}" 
-		href="https://twitter.com/{{twitter}}" 
-		data-screen-name="{{twitter}}"
-		height = "400"
-		data-width = "180"
-		data-widget-id="668139914417061889">Tweets by @{{twitter}}</a>
 	</div>
 
 	<!--Scripts-->
