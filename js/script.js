@@ -13,6 +13,23 @@ var twitFunc = function() {
 
 $(function() {
 
+    function findTwit(official) {
+
+        console.log(official.channels);
+
+        if( official.channels ) {
+            for(var i = 0, twitter = ""; i < official.channels.length; i++) {
+                if(official.channels[i].type == "Twitter"){
+                    twitter = official.channels[i].id;
+                };
+            };
+        }
+        else{
+            twitter = "hidden";
+        }
+        return twitter;
+    }
+
 	// Outputs returned data
     function printReps(data) {
 		console.log(data);
@@ -21,9 +38,11 @@ $(function() {
 		$.each(data.offices, function(key, office){
 			var index = office.officialIndices[0],
 				official = data.officials[index],
+                twitter = findTwit(official);
                 context = {
                     'office': office,
-                    'official':official
+                    'official':official,
+                    'twitter':twitter,
                 },
                 // Handlebars compiler
                 source = $("#template-1").html(),
