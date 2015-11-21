@@ -13,39 +13,6 @@ var twitFunc = function() {
 
 $(function() {
 
-    function getTwitId(username) {
-        var params = {
-                screen_name: "twitterapi,twitter,"+username,
-                user_id: "668139914417061889"
-            };
-
-            
-
-        $.ajax({
-            method: "GET",
-            url: 'https://api.twitter.com/1.1/users/lookup.json',
-            dataType: "json",
-            data: params,
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader('Authorization','OAuth');
-                xhr.setRequestHeader('oauth_consumer_key', '12f8HoXPcCOLquk16g0soLp58');
-                xhr.setRequestHeader('oauth_nonce', '90a7627c02dfbb222146a026f2041e63');
-                xhr.setRequestHeader('oauth_signature','uDZP2scUz6FUKwFie4FtCtJfdNE%3D');
-                xhr.setRequestHeader('oauth_signature_method', 'HMAC-SHA1');
-                xhr.setRequestHeader('oauth_timestamp', '1448141983');
-                xhr.setRequestHeader('oauth_token', '1127121421-2817555474-jWWLMCvrSzdukt8crUUYNNn6bcyTfHd7uHUIxsQ');
-                xhr.setRequestHeader('oauth_version', '1.0');
-            }
-        })
-        .done(function(results) {
-            console.log('Twitter Id Returned');
-            console.log(results);
-        })
-        .fail(function() {
-            console.log('Twit Request Failed');
-        });
-    }
-
 	// Outputs returned data
     function printReps(data) {
 		console.log(data);
@@ -62,8 +29,6 @@ $(function() {
                 source = $("#template-1").html(),
                 template = Handlebars.compile(source),
                 html = template(context);
-
-                
             
             if(office.levels) {
                 switch(office.levels[0]) {
@@ -81,7 +46,6 @@ $(function() {
 		});
 
         twitFunc();
-        getTwitId("drew_drew_this");
 	};
 
     
