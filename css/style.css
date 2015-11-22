@@ -1,3 +1,13 @@
+.word-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
 body {
   background: lightgrey;
 }
@@ -12,6 +22,16 @@ body {
   -webkit-box-shadow: 0 0.1rem 1.2rem 0.2rem grey;
   -moz-box-shadow: 0 0.1rem 1.2rem 0.2rem grey;
   box-shadow: 0 0.1rem 1.2rem 0.2rem grey;
+}
+.reps .rep-info {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 .reps .rep-info p {
   text-transform: capitalize;
