@@ -47,7 +47,12 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="col-sm-6">
-					<img src="{{official.photoUrl}}" class="img-responsive">
+					{{#if address.line2}}
+						<img src="{{official.photoUrl}}" class="img-responsive official-image">
+					{{else}}
+						<img src="images/guy-fawkes.gif" class="img-responsive official-image">
+						<span>No Official Image Provided..</span>
+					{{/if}}
 				</div>
 				<div class="col-md-6 rep-info">
 					<h3>{{official.name}}</h3>

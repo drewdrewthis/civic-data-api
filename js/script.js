@@ -57,7 +57,6 @@ $(function() {
             if(!official.urls) {
                 official.urls =["No Website Available"];
             }; 
-
             var context = {
                     'office': office,
                     'official':official,
