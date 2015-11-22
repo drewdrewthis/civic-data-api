@@ -1,15 +1,35 @@
+body {
+  background: lightgrey;
+}
+.level-title {
+  text-align: center;
+  color: #717171;
+  font-family: monospace;
+  font-size: 2rem;
+}
+.reps {
+  background: white;
+  -webkit-box-shadow: 0 0.1rem 1.2rem 0.2rem grey;
+  -moz-box-shadow: 0 0.1rem 1.2rem 0.2rem grey;
+  box-shadow: 0 0.1rem 1.2rem 0.2rem grey;
+}
+.reps .rep-info p {
+  text-transform: capitalize;
+}
+.reps .office-name {
+  padding: 1rem;
+}
+.reps .office-name h2 {
+  font-size: 2.5rem;
+}
 header {
   text-align: center;
-  background: darkgreen;
+  background: #005664;
   padding: 2rem;
 }
 header form {
   max-width: 500px;
   margin: auto;
-}
-img {
-  max-height: 100px;
-  max-width: 100px;
 }
 .hidden {
   display: none;

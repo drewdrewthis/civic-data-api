@@ -45,16 +45,28 @@ $(function() {
 	// Outputs returned data
     function printReps(data) {
 		console.log(data);
+        $('#reps').show();
+        $('.national').innerHTML = "";
+        $('.state').innerHTML = "";
+        $('.city').innerHTML = "";
 
         // Gets and outputs info for each official by office 
 		$.each(data.offices, function(key, office){
 			var index = office.officialIndices[0],
 				official = data.officials[index],
                 twitter = findTwit(official, office);
-                context = {
+
+            if(!official.urls) {
+                official.urls =["No Website Available"];
+            }; 
+
+            var context = {
                     'office': office,
                     'official':official,
                     'twitter':twitter,
+                    'address':official.address[0],
+                    'phone':official.phones[0],
+                    'url':official.urls || official.urls[0]
                 },
                 // Handlebars compiler
                 source = $("#template-1").html(),

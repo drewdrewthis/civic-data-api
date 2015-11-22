@@ -11,20 +11,27 @@
 	<header class="container-fluid">
 		<div class="row">
 			<form action="" id="address_lookup" class="form-inline">
-				<input type="text" name="user-input" class="form-control" autofocus>
+				<input type="text" name="user-input" class="form-control" placeholder="Street, State, ZIP" autofocus>
 				<input type="submit" name="Submit" class="btn">
 			</form>
 		</div>
 	</header>
-	<section class="container-fluid">
+	<section class="container">
 		<div class="row" id="voter-info"></div>
 		<div class="row">
-			<div id="reps">
-				<div class="container reps national"></div>
-				<hr>
-				<div class="container reps state"></div>
-				<hr>
+			<div id="reps" class="container" style="display: none;">
+				<div class="row">
+					<h2 class="level-title">- National Level -</h2>
+					<div class="container reps national"></div>
+				</div>
+				<div class="row">
+					<h2 class="level-title">- State Level -</h2>
+					<div class="container reps state"></div>
+				</div>
+				<div class="row">
+					<h2 class="level-title">- City Level -</h2>
 				<div class="container reps city"></div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -33,15 +40,32 @@
 
 	<!--Templates-->
 	<div id="template-1" class="hidden" type="text/x-handlebars-template">
+		<div class="row office-name btn-primary">
+			<h2>{{office.name}}</h2>
+		</div>
 		<div class="row">
-			<div class="col-md-8">
-				<h2>{{office.name}}</h2>
-				<h3>{{official.name}}</h3>
-				<div class="col-sm-4">
+			<div class="col-md-6">
+				<div class="col-sm-6">
 					<img src="{{official.photoUrl}}" class="img-responsive">
 				</div>
+				<div class="col-md-6 rep-info">
+					<h3>{{official.name}}</h3>
+					<h4>{{official.party}} Party</h4>
+					<h5>Address</h5>
+					<p>{{address.line1}}<br>
+					{{#if address.line2}}
+						{{address.line2}}<br>
+					{{/if}}
+					{{address.city}}, 
+					{{address.state}}, 
+					{{address.zip}}</p>
+					<h5>Phone</h5>
+					<p>{{phone}}</p>
+					<a href="{{url}}" target="_blank">{{url}}</a>
+				</div>
+				
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<a class="twitter-timeline {{twitter}}" 
 				href="https://twitter.com/{{twitter}}" 
 				data-screen-name="{{twitter}}"
