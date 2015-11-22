@@ -18,8 +18,6 @@ $(function() {
     // Gets Twitter Handle from JSON. If no Twitter handle, hide twitter box.
     function findTwit(official, office) {
 
-        console.log(official.channels);
-
         var twitter = "hidden";
 
         if( official.channels ) {
