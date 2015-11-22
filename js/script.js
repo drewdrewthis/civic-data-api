@@ -1,3 +1,5 @@
+
+// Twitter API Timeline Embed Function
 var twitFunc = function() {
     !function(d,s,id){
         var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
@@ -13,20 +15,30 @@ var twitFunc = function() {
 
 $(function() {
 
-    function findTwit(official) {
+    // Gets Twitter Handle from JSON. If no Twitter handle, hide twitter box.
+    function findTwit(official, office) {
 
         console.log(official.channels);
 
+        var twitter = "hidden";
+
         if( official.channels ) {
-            for(var i = 0, twitter = ""; i < official.channels.length; i++) {
+            for(var i = 0; i < official.channels.length; i++) {
                 if(official.channels[i].type == "Twitter"){
                     twitter = official.channels[i].id;
                 };
             };
+            //Special Cases
+            switch(office.name) {
+                case "Vice-President of the United States":
+                    twitter = "VP";
+                    break;
+                case "President of the United States":
+                    twitter = "POTUS";
+                    break;
+            }
         }
-        else{
-            twitter = "hidden";
-        }
+
         return twitter;
     }
 
@@ -38,7 +50,7 @@ $(function() {
 		$.each(data.offices, function(key, office){
 			var index = office.officialIndices[0],
 				official = data.officials[index],
-                twitter = findTwit(official);
+                twitter = findTwit(official, office);
                 context = {
                     'office': office,
                     'official':official,
