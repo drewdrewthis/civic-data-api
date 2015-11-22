@@ -87,6 +87,10 @@ $(function() {
 		});
 
         twitFunc();
+
+        $('.btn-primary').on("click", function(){
+            $(this).next().slideToggle("slow");
+        });
 	};
 
     
