@@ -57,12 +57,19 @@ $(function() {
             if(!official.urls) {
                 official.urls =["No Website Available"];
             }; 
+            if(!official.address) {
+                official.address =["No Address Available"];
+            }; 
+            if(!official.phone) {
+                official.phone =["No Phone Number Available"];
+            }; 
+
             var context = {
                     'office': office,
                     'official':official,
                     'twitter':twitter,
-                    'address':official.address[0],
-                    'phone':official.phones[0],
+                    'address':official.adress || official.address[0],
+                    'phone':official.phone || official.phones[0],
                     'url':official.urls || official.urls[0]
                 },
                 // Handlebars compiler
@@ -91,9 +98,6 @@ $(function() {
             $(this).next().slideToggle("slow");
         });
 	};
-
-    
-
 
     // Outputs returned data
     function printVoterInfo(data) {
@@ -133,6 +137,8 @@ $(function() {
     $('#address_lookup').submit(function(e){
     	e.preventDefault();
     	$('.reps').html("");
+        $('.norm-add').html("");
+
     	var input = $('input').val(),
     		params = {
 				address: input,
@@ -149,6 +155,23 @@ $(function() {
     	})
     	.done(function(data) {
     		console.log('Reps Returned');
+
+            if(data.normalizedInput.line1) {
+                $('.norm-add').append(data.normalizedInput.line1 + " ");
+            };
+
+            if(data.normalizedInput.city) {
+                $('.norm-add').append(data.normalizedInput.city + ", " );
+            };
+
+            if(data.normalizedInput.state) {
+                $('.norm-add').append(data.normalizedInput.state);
+            };
+
+            if(data.normalizedInput.zip) {
+                $('.norm-add').append(", " + data.normalizedInput.zip);
+            };
+
     		printReps(data);
     	})
     	.fail(function() {

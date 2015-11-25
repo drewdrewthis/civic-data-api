@@ -25,6 +25,32 @@ body {
 	background: lightgrey;
 }
 
+.top-box {
+	position: relative;
+
+	input:-webkit-autofill {
+		background-color: white;
+	}
+
+	.norm-add {
+		padding: 1rem;
+		height: 2rem;
+		margin: 0;
+		color: white;
+		font-weight: 100;
+		text-transform: capitalize;
+		font-size: 1.8rem;
+		letter-spacing: 1.3px;
+	}
+}
+
+#logo {
+	position: absolute;
+	left: 2rem;
+	top: -1rem;
+	width: 175px;
+}
+
 .level-title {
 	text-align: center;
 	color: #717171;
@@ -36,10 +62,16 @@ body {
 	background: white;
 	.box-shadow ( 0 0.1rem 1.2rem 0.2rem grey);	
 
-
+	&>.row {
+		padding-bottom: 5rem;
+	}
 	
 	.rep-info {
 		.word-wrap;
+		h3 {
+			border-bottom: 2px solid #81ACD2;
+			padding-bottom: 1.1rem;
+		}
 		p {
 			text-transform: capitalize;
 		}
@@ -50,6 +82,19 @@ body {
 		h2 {
 			font-size: 2.5rem;
 		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.comment {
+		position: absolute;
+		bottom: 0rem;
+		background: black;
+		color: red;
+		width: 100%;
+		text-align: center;
 	}
 }
 
@@ -62,6 +107,10 @@ header {
 		max-width: 500px;
 		margin: auto;
 	}
+}
+
+.no-padding {
+	padding: 0;
 }
 
 .hidden {

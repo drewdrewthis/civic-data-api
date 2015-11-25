@@ -10,11 +10,17 @@
 </head>
 <body>
 	<header class="container-fluid">
-		<div class="row">
-			<form action="" id="address_lookup" class="form-inline">
-				<input type="text" name="user-input" class="form-control" placeholder="Street, State, ZIP" autofocus>
-				<input type="submit" name="Submit" class="btn">
-			</form>
+		<div class="top-box container">
+			<img id="logo" src="images/TweetLogo.png" width="175">
+			<div class="row">
+				<form action="" id="address_lookup" class="form-inline">
+					<input type="text" name="user-input" class="form-control" placeholder="Street, State, ZIP" autofocus>
+					<input type="submit" name="Submit" class="btn">
+				</form>
+			</div>
+			<div class="row">
+				<h3 class="norm-add"></h3>
+			</div>
 		</div>
 	</header>
 	<section class="container">
@@ -46,12 +52,12 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<div class="col-sm-6">
-					{{#if address.line2}}
+				<div class="col-sm-6 no-padding">
+					{{#if official.photoUrl}}
 						<img src="{{official.photoUrl}}" class="img-responsive official-image">
 					{{else}}
-						<img src="images/guy-fawkes.gif" class="img-responsive official-image">
-						<span>No Official Image Provided..</span>
+						<img src="images/simpsons.gif" class="img-responsive official-image">
+						<span class="comment">No Official Image Provided..</span>
 					{{/if}}
 				</div>
 				<div class="col-md-6 rep-info">
