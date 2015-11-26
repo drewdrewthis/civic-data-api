@@ -1,6 +1,6 @@
 
 // Twitter API Timeline Embed Function
-var twitFunc = function() {
+twitFunc = function() {
     !function(d,s,id){
         var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
         if(!d.getElementById(id)){
@@ -11,7 +11,6 @@ var twitFunc = function() {
         }
     }(document,"script","twitter-wjs");
 };
-
 
 $(function() {
 
