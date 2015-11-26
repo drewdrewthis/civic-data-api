@@ -25,12 +25,6 @@ body {
 	background: lightgrey;
 }
 
-@media only screen and (max-width: 992px) {
-	.main-section .container {
-		max-width: 520px;
-	}
-}
-
 .top-box {
 	position: relative;
 
@@ -49,14 +43,12 @@ body {
 		letter-spacing: 1.3px;
 	}
 }
-
 #logo {
+	width: 142px;
 	position: absolute;
-	left: 2rem;
-	top: -1rem;
-	width: 175px;
+	top: 0;
+	left: 1rem;
 }
-
 .level-title {
 	text-align: center;
 	color: #717171;
@@ -112,6 +104,40 @@ header {
 	form {
 		max-width: 500px;
 		margin: auto;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.main-section {
+		padding: 0 10%;
+		.container {
+			max-width: 520px;
+		}
+	}
+	#reps {
+		.col-sm-12 {
+			padding: 0;
+		}
+
+		.reps {
+			&> .row {
+		    	padding-bottom: 0;
+			}
+
+			.rep-info {
+				padding-bottom: 2rem;
+			}
+		}
+	}
+	#logo {
+		position: relative;
+		left: 0;
+		width: 88px;
+	}
+
+	input[type="text"] {
+		max-width: 80%;
+		margin: 1rem auto;
 	}
 }
 
